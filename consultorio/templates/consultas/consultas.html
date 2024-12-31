@@ -1,0 +1,38 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<h1 class="page-title">Consultas</h1>
+
+<div class="header-actions">
+    <search class="search-bar">
+        <input type="search" placeholder="Buscar cliente por nombre">
+    </search>
+    <a href="{% url 'crear-consulta' %}" class="add-btn">Nueva consulta</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Paciente</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for consulta in consultas %}
+        <tr>
+            <td>{{ consulta.date }}</td>
+            <td>{{ consulta.paciente.name }} {{ consulta.paciente.surname }}</td>
+            <td>{{ consulta.description }}</td>
+            <td>{{ consulta.price }}</td>
+            <td>
+                <button class="action-btn modify-btn">Modificar</button>
+                <button class="action-btn delete-btn">Eliminar</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

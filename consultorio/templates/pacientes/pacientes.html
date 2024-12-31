@@ -1,0 +1,38 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<h1 class="page-title">Pacientes</h1>
+
+<div class="header-actions">
+    <search class="search-bar">
+        <input type="search" placeholder="Buscar paciente por nombre">
+    </search>
+    <a href="{% url 'agregar-paciente' %}" class="add-btn">Agregar paciente</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for paciente in pacientes %}
+        <tr>
+            <td>{{ paciente.name }}</td>
+            <td>{{ paciente.surname }}</td>
+            <td>{{ paciente.age }}</td>
+            <td>
+                <a href="{% url 'paciente' paciente.id %}" class="action-btn modify-btn">Modificar</a>
+                <button class="action-btn delete-btn">Eliminar</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,252 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.page-title {
+    text-align: center;
+    margin-top: 20px; /* Menos margen en pantallas pequeñas */
+    font-size: 2rem;
+    color: #333;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.search-bar input {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.add-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-patient-btn:hover {
+    background-color: #45a049;
+}
+
+.table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra más suave */
+    background-color: #fff;
+}
+
+.table th,
+.table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.action-btn {
+    padding: 8px 16px; /* Botones más grandes */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+    font-size: 0.9rem;
+}
+
+.modify-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.modify-btn:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+    .table {
+        width: 100%; /* Ajuste para pantallas pequeñas */
+    }
+
+    .search-bar input {
+        width: 250px;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .add-patient-btn {
+        width: 100%; /* Botón más grande en móviles */
+        padding: 12px;
+    }
+
+    .table th,
+    .table td {
+        padding: 10px; /* Reduce el espacio de la tabla en pantallas pequeñas */
+    }
+}
+
+/* Estilos generales para el header */
+header {
+    background-color: #333; /* Fondo oscuro para el header */
+    padding: 20px 0; /* Espaciado superior e inferior */
+    color: white; /* Texto blanco */
+}
+
+nav {
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar el contenido */
+    padding: 0 20px; /* Espaciado lateral */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Centrar los elementos */
+    list-style: none; /* Eliminar los puntos de la lista */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px; /* Espaciado entre los elementos */
+}
+
+nav ul li a {
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Quitar el subrayado */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    transition: color 0.3s ease; /* Transición para el hover */
+}
+
+nav ul li a:hover {
+    color: #4CAF50; /* Cambio de color al pasar el mouse */
+}
+
+@media (max-width: 768px) {
+    /* Estilos para pantallas pequeñas */
+    nav ul {
+        flex-direction: column; /* Colocar los elementos en columna */
+        align-items: center; /* Centrar los elementos */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Espaciado vertical */
+    }
+}
+
+
+/* Estilos generales para el formulario */
+form {
+    background-color: #fff; /* Fondo blanco */
+    padding: 30px; /* Espaciado interior */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
+    max-width: 600px; /* Máximo ancho del formulario */
+    margin: 50px auto; /* Centrado automático con un margen superior */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+form .form-control {
+    width: 100%; /* Ancho completo */
+    padding: 12px; /* Espaciado dentro del campo */
+    margin-bottom: 20px; /* Mayor espacio entre campos */
+    border-radius: 4px; /* Bordes redondeados */
+    border: 1px solid #ddd; /* Borde gris claro */
+    font-size: 1rem; /* Tamaño de fuente */
+    box-sizing: border-box; /* Incluye el padding y border en el tamaño total */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Suavizar transición */
+}
+
+form .form-control:focus {
+    outline: none; /* Eliminar borde al hacer foco */
+    border-color: #4CAF50; /* Borde verde al hacer foco */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2); /* Sombra suave */
+}
+
+form .form-control:invalid {
+    border-color: #ddd; /* Color de borde por defecto para los campos no válidos */
+}
+
+form textarea.form-control {
+    resize: vertical; /* Permitir el redimensionado verticalmente */
+}
+
+form button {
+    background-color: #4CAF50; /* Fondo verde */
+    color: white; /* Texto blanco */
+    padding: 12px 24px; /* Espaciado dentro del botón */
+    border: none;
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 1.1rem; /* Tamaño de fuente */
+    cursor: pointer;
+    width: 100%; /* Botón de ancho completo */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones para hover y click */
+    margin-top: 20px; /* Más espacio superior */
+}
+
+form button:hover {
+    background-color: #45a049; /* Fondo más oscuro al hacer hover */
+}
+
+form button:active {
+    background-color: #388e3c; /* Fondo más oscuro al hacer clic */
+    transform: scale(0.98); /* Efecto al hacer clic */
+}
+
+@media (max-width: 768px) {
+    /* Estilos para pantallas pequeñas */
+    form {
+        padding: 20px; /* Reducir el padding en pantallas pequeñas */
+        width: 90%; /* Ancho del formulario en pantallas pequeñas */
+    }
+
+    form h1 {
+        font-size: 1.5rem; /* Reducir tamaño de título en pantallas pequeñas */
+    }
+
+    form .form-control {
+        font-size: 0.95rem; /* Reducir tamaño de fuente de los campos en pantallas pequeñas */
+    }
+
+    form button {
+        font-size: 1rem; /* Reducir tamaño de fuente del botón */
+    }
+}
